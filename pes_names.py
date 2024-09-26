@@ -1,11 +1,11 @@
 import random
 
 char_map = {
-    "a": ["a", "ay", "ar"],
+    "a": ["a", "o"],
     "b": ["b", "d", "v", "p"],
     "c": ["c", "s", "k"],
     "d": ["b", "d", "p"],
-    "e": ["i", "e", "er"],
+    "e": ["i", "e", "u"],
     "f": ["f", "ef"],
     "g": ["g", "k", "j"],
     "h": ["h"],
@@ -24,7 +24,7 @@ char_map = {
     "u": ["u", "iu", "o"],
     "v": ["v", "f", "vi"],
     "w": ["w", "u", "v"],
-    "x": ["x", "ex", "ix"],
+    "x": ["x", "ks"],
     "y": ["y", "i", "ui", "ai"],
     "z": ["z", "s", "th"],
 }
@@ -34,6 +34,8 @@ def get_name():
         name = input("Enter a name to pessimate (or type 'quit' to exit): ")
         if name.strip() == '':
             print("Input cannot be empty. Please try again.")
+        elif any(char.isdigit() for char in name):
+            print("Please enter a valid name")
         elif name.lower() == 'quit':
             return None, None
         else:

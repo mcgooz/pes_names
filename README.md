@@ -12,6 +12,5 @@ In the old PES games, Konami rarely had the appropriate licences to be able to u
 It's unknown what the procedure was for creating these names, so I have made an attempt to mimic this.
 
 Input a name and the program will swap out letters for corresponding options from the char map.
-Now with added silliness scale!
 
 It's not perfect, but good for a laugh!

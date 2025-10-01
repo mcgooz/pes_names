@@ -29,17 +29,6 @@ char_map = {
     "z": ["z", "s", "th"],
 }
 
-def get_silliness():
-    while True:
-        try:
-            silliness = int(input("Enter a silliness level between 1-10: "))
-            if 1 <= silliness <= 10:
-                return silliness / 10
-            else:
-                print("Please enter a number between 1 and 10.")
-        except ValueError:
-            print("Please enter a valid integer.")
-
 
 def get_name():
     while True:
@@ -54,7 +43,7 @@ def get_name():
             max_length = len(name)
             return name, max_length
 
-def pessimate(n, m, s):
+def pessimate(n, m):
     pes_name = ""
     length = 0
 
@@ -66,7 +55,7 @@ def pessimate(n, m, s):
             length += 1
         else:
             letter = char.lower()
-            if letter in char_map and random.random() < s:
+            if letter in char_map:
                 replacement = random.choice(char_map[letter])
                 pes_name += replacement
                 length += len(replacement)
@@ -81,7 +70,6 @@ def main():
         if n is None:
             break
         elif n:
-            s = get_silliness()
-            print(pessimate(n, m, s))
+            print(pessimate(n, m))
 
 main()
